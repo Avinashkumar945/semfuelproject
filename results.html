@@ -357,10 +357,10 @@
               if (window.location.protocol === 'file:' || backendUrl === 'null' || backendUrl === '') {
                   backendUrl = 'http://localhost:5000';
               }
-              // If running locally on localhost or 127.0.0.1, ensure port 5000 is used
+              // If running locally on localhost or 127.0.0.1, ensure port 8080 is used
               if (backendUrl.includes('localhost') || backendUrl.includes('127.0.0.1')) {
-                  if (!backendUrl.includes(':5000')) {
-                      backendUrl = 'http://localhost:5000';
+                  if (!backendUrl.includes(':8080')) {
+                      backendUrl = 'http://localhost:8080';
                   }
               }
               const response = await fetch(`${backendUrl}/predict`, {
