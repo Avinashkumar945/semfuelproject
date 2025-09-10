@@ -350,11 +350,11 @@
 
             try {
                 // Call the backend API for predictions
-                const response = await fetch('/predict', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ compositions: componentCompositions })
-                });
+              const response = await fetch('https://semfuelproject.onrender.com/predict', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ compositions: componentCompositions })
+});
 
                 if (!response.ok) throw new Error('API call failed');
                 const predictions = await response.json();
