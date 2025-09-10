@@ -279,6 +279,5 @@ def predict():
 if __name__ == '__main__':
     print("Starting Flask Server...")
     print(f"Server available at: http://0.0.0.0:{port}")
-    app.run(host='0.0.0.0', port=port)
-    app.run(host='0.0.0.0', port=5000, debug=False)
+    app.run(host='0.0.0.0', port=port, debug=False)
 
