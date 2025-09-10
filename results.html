@@ -350,7 +350,13 @@
 
             try {
                 // Call the backend API for predictions
-              const response = await fetch('https://semfuelproject.onrender.com/predict', {
+              // Use full backend URL for live deployment
+              let backendUrl = window.location.origin;
+              // If running locally, override backendUrl to localhost with port 5000
+              if (backendUrl.includes('localhost') || backendUrl.includes('127.0.0.1')) {
+                  backendUrl = 'http://localhost:5000';
+              }
+              const response = await fetch(`${backendUrl}/predict`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ compositions: componentCompositions })
